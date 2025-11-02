@@ -24,3 +24,4 @@
   | P2 | C5 | Visual Map | ✅ Complete | read-only tree |
   | P2 | C6 | Baseline & Tag | ✅ Complete | v0.3.0-phase2-baseline |
   | P2 | C7 | ESLint Flat Config + Prettier + Builder Smoke Test | ✅ Complete | Migrated to flat config, added Prettier, and a Vitest render smoke test |
+  | P2 | C8 | Pre-Phase-3 Prep (Bundle + About Status) | ✅ Complete | Added bundle script/ui_static.tar.gz and About status tile |

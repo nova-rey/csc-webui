@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "api_version": "v1",
+  "server": "mock",
+  "time": "2025-01-01T00:00:00Z",
+  "endpoints": ["/api/v1/spec/normalize", "/api/v1/runs", "/api/v1/runs/{id}/summary", "/api/v1/runs/{id}/replay"]
+}

@@ -1,19 +1,5 @@
-project: csc-webui
 phase: 2
-checkpoint: 7
-title: ESLint Flat Config + Prettier + Builder Smoke Test
-description: Migrated to modern ESLint flat config, integrated Prettier formatting, and added a Vitest smoke test for the Builder route.
+checkpoint: 8
+title: Pre-Phase-3 Prep (Bundle + About Status)
+description: Added reproducible UI bundle tarball and About page status tile with API/Mock detection.
 status: complete
-version_tag: v0.3.0-phase2-baseline
-api_compat:
-  ui_semver: 0.3.0
-  csc_api: v1
-artifacts:
-  - src/routes/Builder.tsx
-  - src/spec/authoringTypes.ts
-  - src/spec/presets.ts
-  - src/spec/convert.ts
-  - src/state/builderStore.ts
-  - src/components/builder/*
-notes:
-  - Builder uses /spec/normalize; no graph editing yet.

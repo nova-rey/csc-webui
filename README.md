@@ -58,3 +58,16 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 See `docs/PHASE_CHECKLIST.md` for checkpoint tracking and `docs/WEBUI_SNAPSHOT.yaml` for current state.
 
 ```
+
+## Bundle (Optional Embedding)
+Produce a static bundle tarball for CSC to mount under `/ui`:
+```bash
+npm run build:bundle
+# outputs ./ui_static.tar.gz containing the dist/ directory
+```
+
+### About → Status
+
+The About page shows a small status tile including the configured base URL, whether a token is set, and the result of a status probe:
+- Real API: GET ${VITE_CSC_BASE_URL}/status
+- Mock mode: reads public/mock-data/status.json

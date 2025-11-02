@@ -17,6 +17,18 @@ const BASE = import.meta.env.VITE_CSC_BASE_URL || "http://localhost:8080/api/v1"
 const TOKEN = import.meta.env.VITE_CSC_TOKEN;
 const USE_MOCK = (import.meta.env.VITE_CSC_USE_MOCK || "").toLowerCase() === "true";
 
+export function baseUrl() {
+  return BASE;
+}
+
+export function authHeaders() {
+  return TOKEN ? { headers: { Authorization: `Bearer ${TOKEN}` } } : {};
+}
+
+export function useMock() {
+  return USE_MOCK;
+}
+
 const api = axios.create({
   baseURL: BASE,
   headers: TOKEN ? { Authorization: `Bearer ${TOKEN}` } : {},
@@ -116,5 +128,22 @@ export async function getRunReplay(id: string): Promise<ApiResp<ReplayEvent[]>> 
     return ok(r.status, r.data as ReplayEvent[]);
   } catch (error) {
     return normalizeError(error);
+  }
+}
+
+export async function getApiStatus(): Promise<
+  { ok: boolean; api_version?: string; server?: string; time?: string; endpoints?: string[] } | { ok: false; error: string }
+> {
+  try {
+    if (useMock()) {
+      const r = await axios.get("/mock-data/status.json");
+      return r.data;
+    } else {
+      const r = await axios.get(`${baseUrl()}/status`, authHeaders());
+      // tolerant shape; many backends won't have /status yet
+      return typeof r.data === "object" && r.data ? { ok: true, ...(r.data as any) } : { ok: true };
+    }
+  } catch (e: any) {
+    return { ok: false, error: e?.message ?? "unknown error" };
   }
 }
