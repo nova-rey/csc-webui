@@ -1,4 +1,4 @@
-import { Rule, RuleVerb } from "../../spec/authoringTypes";
+import type { Rule, RuleVerb } from "../../spec/authoringTypes";
 const verbs: RuleVerb[] = ["switch_profile", "press", "regress", "apply_policy"];
 
 export default function RuleForm({
@@ -6,7 +6,7 @@ export default function RuleForm({
   onChange,
 }: {
   value: Rule;
-  onChange: (r: Rule) => void;
+  onChange: (_rule: Rule) => void;
 }) {
   function setArg<K extends string>(k: K, v: unknown) {
     const args = { ...(value.then.args ?? {}), [k]: v } as Record<string, unknown>;

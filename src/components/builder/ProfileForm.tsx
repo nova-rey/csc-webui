@@ -1,4 +1,4 @@
-import { AuthoringSpec, BaseBet, Profile } from "../../spec/authoringTypes";
+import type { AuthoringSpec, BaseBet, Profile } from "../../spec/authoringTypes";
 
 export default function ProfileForm({
   spec: _spec,
@@ -7,7 +7,7 @@ export default function ProfileForm({
 }: {
   spec: AuthoringSpec;
   profile: Profile;
-  onChange: (p: Profile) => void;
+  onChange: (_profile: Profile) => void;
 }) {
   void _spec;
   function updateBet(idx: number, patch: Partial<BaseBet>) {

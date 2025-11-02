@@ -1,4 +1,4 @@
-import { AuthoringSpec } from "../../spec/authoringTypes";
+import type { AuthoringSpec } from "../../spec/authoringTypes";
 export default function VisualMap({ spec }: { spec: AuthoringSpec }) {
   return (
     <div className="text-sm border rounded p-2 bg-white">

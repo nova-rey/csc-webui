@@ -1,13 +1,15 @@
-import { AuthoringSpec } from "../../spec/authoringTypes";
+import type { AuthoringSpec } from "../../spec/authoringTypes";
 
 export default function Navigator(props: {
   spec: AuthoringSpec;
   selected: { kind: "identity" | "table" | "profile" | "rule"; id?: string };
-  setSelected: (s: { kind: "identity" | "table" | "profile" | "rule"; id?: string }) => void;
+  setSelected: (
+    _selection: { kind: "identity" | "table" | "profile" | "rule"; id?: string },
+  ) => void;
   addProfile: () => void;
-  removeProfile: (id: string) => void;
+  removeProfile: (_id: string) => void;
   addRule: () => void;
-  removeRule: (id: string) => void;
+  removeRule: (_id: string) => void;
 }) {
   const { spec, selected } = props;
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { AuthoringSpec, Profile, Rule } from "../spec/authoringTypes";
+import type { AuthoringSpec, Profile, Rule } from "../spec/authoringTypes";
 import { presetMolly } from "../spec/presets";
 
 const LS_KEY = "csc_builder_workspace_v1";

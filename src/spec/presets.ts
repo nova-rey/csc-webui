@@ -1,4 +1,4 @@
-import { AuthoringSpec } from "./authoringTypes";
+import type { AuthoringSpec } from "./authoringTypes";
 
 export const presetMolly: AuthoringSpec = {
   identity: { name: "3-Point Molly (Preset)", version: "0.1" },

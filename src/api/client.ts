@@ -25,7 +25,7 @@ export function authHeaders() {
   return TOKEN ? { headers: { Authorization: `Bearer ${TOKEN}` } } : {};
 }
 
-export function useMock() {
+export function isMockEnabled() {
   return USE_MOCK;
 }
 
@@ -131,19 +131,52 @@ export async function getRunReplay(id: string): Promise<ApiResp<ReplayEvent[]>> 
   }
 }
 
-export async function getApiStatus(): Promise<
-  { ok: boolean; api_version?: string; server?: string; time?: string; endpoints?: string[] } | { ok: false; error: string }
-> {
+type ApiStatusSuccess = {
+  ok: true;
+  api_version?: string;
+  server?: string;
+  time?: string;
+  endpoints?: string[];
+} & Record<string, unknown>;
+type ApiStatusError = { ok: false; error: string };
+
+export type ApiStatus = ApiStatusSuccess | ApiStatusError;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function readString(value: unknown): string | undefined {
+  return typeof value === "string" ? value : undefined;
+}
+
+function readStringArray(value: unknown): string[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const strings = value.filter((item): item is string => typeof item === "string");
+  return strings.length > 0 || value.length === 0 ? strings : undefined;
+}
+
+function toApiStatusSuccess(data: Record<string, unknown>): ApiStatusSuccess {
+  const result: ApiStatusSuccess = { ok: true, ...data };
+  result.api_version = readString(data.api_version);
+  result.server = readString(data.server);
+  result.time = readString(data.time);
+  result.endpoints = readStringArray(data.endpoints);
+  return result;
+}
+
+export async function getApiStatus(): Promise<ApiStatus> {
   try {
-    if (useMock()) {
+    if (isMockEnabled()) {
       const r = await axios.get("/mock-data/status.json");
-      return r.data;
-    } else {
-      const r = await axios.get(`${baseUrl()}/status`, authHeaders());
-      // tolerant shape; many backends won't have /status yet
-      return typeof r.data === "object" && r.data ? { ok: true, ...(r.data as any) } : { ok: true };
+      return isRecord(r.data) ? toApiStatusSuccess(r.data) : { ok: true };
     }
-  } catch (e: any) {
-    return { ok: false, error: e?.message ?? "unknown error" };
+
+    const r = await axios.get(`${baseUrl()}/status`, authHeaders());
+    // tolerant shape; many backends won't have /status yet
+    return isRecord(r.data) ? toApiStatusSuccess(r.data) : { ok: true };
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "unknown error";
+    return { ok: false, error: message };
   }
 }

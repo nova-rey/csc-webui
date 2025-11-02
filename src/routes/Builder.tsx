@@ -10,7 +10,7 @@ import JsonPreview from "../components/builder/JsonPreview";
 import ErrorList from "../components/builder/ErrorList";
 import VisualMap from "../components/builder/VisualMap";
 import { toDraft } from "../spec/convert";
-import { AuthoringSpec } from "../spec/authoringTypes";
+import type { AuthoringSpec } from "../spec/authoringTypes";
 import { normalizeSpec } from "../api/client";
 import { PRESETS } from "../spec/presets";
 

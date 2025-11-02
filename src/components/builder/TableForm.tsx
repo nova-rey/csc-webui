@@ -1,4 +1,4 @@
-import { TableSettings } from "../../spec/authoringTypes";
+import type { TableSettings } from "../../spec/authoringTypes";
 const profiles = ["3-4-5x", "1x", "2x", "20x", "custom"] as const;
 type OddsProfile = TableSettings["odds_profile"];
 
@@ -7,7 +7,7 @@ export default function TableForm({
   onChange,
 }: {
   value: TableSettings;
-  onChange: (v: TableSettings) => void;
+  onChange: (_value: TableSettings) => void;
 }) {
   return (
     <div className="grid grid-cols-2 gap-3 text-sm">
