@@ -29,7 +29,7 @@ export type RuleVerb = "switch_profile" | "press" | "regress" | "apply_policy";
 
 export interface Rule {
   id: ID;
-  when: string; // simple expression string (evaluated by CSC)
+  when: string;
   then: { verb: RuleVerb; args?: Record<string, unknown> };
   cooldown?: number;
   scope?: "roll" | "hand" | "session";

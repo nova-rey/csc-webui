@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from "react";
+import { useState } from "react";
 import { useBuilderStore } from "../state/builderStore";
 import Navigator from "../components/builder/Navigator";
 import IdentityForm from "../components/builder/IdentityForm";
@@ -29,28 +29,21 @@ export default function Builder() {
       setNormalized(r.data.normalized);
       setWarnings(r.data.warnings ?? []);
     } else {
-      const detailErrors = (r.details as { errors?: string[] } | undefined)?.errors ?? [];
-      setErrors([`${r.status}: ${r.message}`, ...detailErrors]);
+      setErrors([`${r.status}: ${r.message}`].concat((r as any).details?.errors ?? []));
     }
   }
 
-  function importJson(e: ChangeEvent<HTMLInputElement>) {
+  function importJson(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => {
       try {
         const obj = JSON.parse(String(reader.result));
-        // Minimal shape check
-        const candidate = obj as Partial<AuthoringSpec>;
-        if (!candidate || typeof candidate !== "object") throw new Error("Invalid authoring spec shape.");
-        if (!candidate.identity || !candidate.behavior?.rules || !candidate.profiles) {
-          throw new Error("Invalid authoring spec shape.");
-        }
-        setSpec(candidate as AuthoringSpec);
-      } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : String(err);
-        setErrors([`Import failed: ${message}`]);
+        if (!obj.identity || !obj.behavior?.rules || !obj.profiles) throw new Error("Invalid authoring spec shape.");
+        setSpec(obj as AuthoringSpec);
+      } catch (err: any) {
+        setErrors([`Import failed: ${err.message}`]);
       }
     };
     reader.readAsText(file);
@@ -69,10 +62,7 @@ export default function Builder() {
 
   function loadPreset(id: string) {
     const found = PRESETS.find((p) => p.id === id);
-    if (found) {
-      const copy = JSON.parse(JSON.stringify(found.spec)) as AuthoringSpec;
-      setSpec(copy);
-    }
+    if (found) setSpec(JSON.parse(JSON.stringify(found.spec)));
   }
 
   const currentProfile = selected.kind === "profile" ? spec.profiles.find((p) => p.id === selected.id) : undefined;
@@ -113,6 +103,7 @@ export default function Builder() {
         )}
         {selected.kind === "profile" && currentProfile && (
           <ProfileForm
+            spec={spec}
             profile={currentProfile}
             onChange={(p) => setSpec((s) => ({ ...s, profiles: s.profiles.map((x) => (x.id === p.id ? p : x)) }))}
           />
@@ -123,7 +114,10 @@ export default function Builder() {
             onChange={(r) =>
               setSpec((s) => ({
                 ...s,
-                behavior: { ...s.behavior, rules: s.behavior.rules.map((x) => (x.id === r.id ? r : x)) },
+                behavior: {
+                  ...s.behavior,
+                  rules: s.behavior.rules.map((x) => (x.id === r.id ? r : x))
+                }
               }))
             }
           />
