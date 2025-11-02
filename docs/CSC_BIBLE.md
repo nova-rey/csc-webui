@@ -6,3 +6,10 @@ Converted ESLint to the modern flat config (`eslint.config.js`), integrated Pret
 
 ### Checkpoint 8 — Pre-Phase-3 Prep
 Introduced `build:bundle` + `scripts/build_ui_bundle.sh` to emit `ui_static.tar.gz` for embedding in CSC. Added About status tile that probes the API (or mock JSON) and surfaces base URL, token presence, and API info.
+
+### Phase 3 — Runs Dashboard
+Introduced the Runs Dashboard for managing and inspecting CSC runs.  
+The new `/runs` route lists recent runs with status badges, start time, seed, and a “View” link.  
+`/runs/:id` shows bankroll summary, drawdown, artifact links, and a replay placeholder.  
+Mock JSONs enable offline development.  
+Added launch and refresh controls, smoke tests, and `v0.4.0-phase3-baseline`.
