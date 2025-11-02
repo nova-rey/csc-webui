@@ -19,7 +19,8 @@ export default function VisualMap({ spec }: { spec: AuthoringSpec }) {
           <ul className="list-disc list-inside">
             {spec.behavior.rules.map((r) => (
               <li key={r.id}>
-                <span className="font-mono">{r.id}</span> — when <em>{r.when}</em> then <code>{r.then.verb}</code>
+                <span className="font-mono">{r.id}</span> — when <em>{r.when}</em> then{" "}
+                <code>{r.then.verb}</code>
               </li>
             ))}
           </ul>

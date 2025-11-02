@@ -20,8 +20,8 @@ export function toDraft(spec: AuthoringSpec): Record<string, unknown> {
         then: r.then,
         cooldown: r.cooldown ?? undefined,
         scope: r.scope ?? undefined,
-        guards: r.guards ?? undefined
-      }))
-    }
+        guards: r.guards ?? undefined,
+      })),
+    },
   };
 }

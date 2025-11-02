@@ -1,5 +1,11 @@
 import { Identity } from "../../spec/authoringTypes";
-export default function IdentityForm({ value, onChange }: { value: Identity; onChange: (v: Identity) => void }) {
+export default function IdentityForm({
+  value,
+  onChange,
+}: {
+  value: Identity;
+  onChange: (v: Identity) => void;
+}) {
   return (
     <div className="space-y-2">
       <label className="block text-sm">

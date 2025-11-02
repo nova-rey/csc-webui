@@ -1,7 +1,7 @@
 project: csc-webui
 current_phase: 2
-current_checkpoint: 6
-checkpoint_title: Spec Builder MVP complete
+current_checkpoint: 7
+checkpoint_title: ESLint Flat Config + Prettier + Builder Smoke Test
 allow_behavior_change: false
 docs_truth_source:
   - docs/WEBUI_SNAPSHOT.yaml

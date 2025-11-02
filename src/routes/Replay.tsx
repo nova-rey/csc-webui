@@ -28,7 +28,7 @@ export default function Replay() {
       </div>
       {events && (
         <pre className="bg-gray-100 p-3 rounded text-xs overflow-auto">
-{JSON.stringify(events, null, 2)}
+          {JSON.stringify(events, null, 2)}
         </pre>
       )}
     </div>

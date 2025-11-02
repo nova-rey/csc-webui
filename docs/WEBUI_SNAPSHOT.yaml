@@ -1,7 +1,8 @@
 project: csc-webui
 phase: 2
-checkpoint: 6
-title: Spec Builder MVP complete
+checkpoint: 7
+title: ESLint Flat Config + Prettier + Builder Smoke Test
+description: Migrated to modern ESLint flat config, integrated Prettier formatting, and added a Vitest smoke test for the Builder route.
 status: complete
 version_tag: v0.3.0-phase2-baseline
 api_compat:

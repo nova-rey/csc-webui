@@ -22,7 +22,7 @@ export default function About() {
       {error && <pre className="text-red-700 bg-red-50 p-3 rounded">{error}</pre>}
       {specs && (
         <pre className="bg-gray-100 p-3 rounded text-xs overflow-auto">
-{JSON.stringify(specs, null, 2)}
+          {JSON.stringify(specs, null, 2)}
         </pre>
       )}
     </div>
