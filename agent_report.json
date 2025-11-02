@@ -1,0 +1,192 @@
+{
+  "timestamp_utc": "2025-11-02T18:35:14Z",
+  "node_version": "v20.19.4",
+  "npm_version": "11.4.2",
+  "phase": "2",
+  "checkpoint": "6",
+  "tag": "v0.3.0-phase2-baseline",
+  "commands": [
+    {
+      "cmd": "node -v",
+      "exit": 0,
+      "tail": "v20.19.4"
+    },
+    {
+      "cmd": "npm -v",
+      "exit": 0,
+      "tail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n11.4.2"
+    },
+    {
+      "cmd": "npm ci",
+      "exit": 0,
+      "tail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\nadded 417 packages, and audited 418 packages in 5s\n\n145 packages are looking for funding\n  run `npm fund` for details\n\n2 moderate severity vulnerabilities\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details."
+    },
+    {
+      "cmd": "npm run lint",
+      "exit": 1,
+      "tail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> csc-webui@0.1.0 lint\n> ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.tsx\n\n\n/workspace/csc-webui/src/components/builder/ProfileForm.tsx\n  52:77  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  69:75  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/components/builder/RuleForm.tsx\n   5:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  32:96  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  74:77  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/components/builder/TableForm.tsx\n  29:81  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/routes/Builder.tsx\n  32:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  45:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/spec/convert.ts\n  11:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n\u2716 9 problems (9 errors, 0 warnings)\n\n(node:4731) ESLintRCWarning: You are using an eslintrc configuration file, which is deprecated and support will be removed in v10.0.0. Please migrate to an eslint.config.js file. See https://eslint.org/docs/latest/use/configure/migration-guide for details. An eslintrc configuration file is used because you have the ESLINT_USE_FLAT_CONFIG environment variable set to false. If you want to use an eslint.config.js file, remove the environment variable. If you want to find the location of the eslintrc configuration file, use the --debug flag.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "cmd": "npx tsc -p . --noEmit",
+      "exit": 2,
+      "tail": "src/routes/Builder.tsx(94,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(96,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(97,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(97,50): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(99,73): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(102,67): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(108,39): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(108,80): error TS7006: Parameter 'x' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(115,24): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(119,48): error TS7006: Parameter 'x' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(125,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(127,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(128,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(129,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(129,53): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(130,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(131,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(133,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(134,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(136,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(137,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(138,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(140,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(141,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(143,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(144,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(145,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(148,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(149,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(149,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(150,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(151,30): error TS7006: Parameter 'w' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(151,33): error TS7006: Parameter 'i' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(152,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(152,32): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(154,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(155,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(157,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(158,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(158,75): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(160,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(162,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(163,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(1,26): error TS7016: Could not find a declaration file for module 'react'. '/workspace/csc-webui/node_modules/react/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`\nsrc/routes/Replay.tsx(16,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(16,5): error TS7016: Could not find a declaration file for module 'react/jsx-runtime'. '/workspace/csc-webui/node_modules/react/jsx-runtime.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react/jsx-runtime';`\nsrc/routes/Replay.tsx(17,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(17,61): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(18,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(19,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(23,22): error TS7006: Parameter 'e' implicitly has an 'any' type.\nsrc/routes/Replay.tsx(25,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(27,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(28,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(30,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(32,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(34,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(1,37): error TS7016: Could not find a declaration file for module 'react'. '/workspace/csc-webui/node_modules/react/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`\nsrc/routes/Runs.tsx(20,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(20,5): error TS7016: Could not find a declaration file for module 'react/jsx-runtime'. '/workspace/csc-webui/node_modules/react/jsx-runtime.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react/jsx-runtime';`\nsrc/routes/Runs.tsx(21,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(22,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(22,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(23,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(24,30): error TS7006: Parameter 'r' implicitly has an 'any' type.\nsrc/routes/Runs.tsx(25,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(26,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(27,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(27,58): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(28,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(28,83): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(29,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(30,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(32,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(33,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(35,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(36,19): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(36,69): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(37,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(38,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(39,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(39,51): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(41,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(43,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(45,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(45,63): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(47,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(48,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/state/builderStore.ts(1,45): error TS7016: Could not find a declaration file for module 'react'. '/workspace/csc-webui/node_modules/react/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`\nsrc/state/builderStore.ts(32,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(36,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(36,58): error TS7006: Parameter 'p' implicitly has an 'any' type.\nsrc/state/builderStore.ts(43,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(47,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(47,88): error TS7006: Parameter 'r' implicitly has an 'any' type."
+    },
+    {
+      "cmd": "npm run build",
+      "exit": 0,
+      "tail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> csc-webui@0.1.0 build\n> vite build\n\n\u001b[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.\u001b[39m\nvite v5.4.21 building for production...\ntransforming...\n\u2713 102 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.40 kB \u2502 gzip:  0.27 kB\ndist/assets/index-ojuxPXc3.css    9.71 kB \u2502 gzip:  2.52 kB\ndist/assets/index-DCQv98Le.js   221.42 kB \u2502 gzip: 72.92 kB\n\u2713 built in 2.43s"
+    },
+    {
+      "cmd": "npm run test",
+      "exit": 1,
+      "tail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nnpm error Missing script: \"test\"\nnpm error\nnpm error To see a list of scripts, run:\nnpm error   npm run\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T18_35_07_717Z-debug-0.log"
+    }
+  ],
+  "lint": {
+    "status": "fail",
+    "tail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> csc-webui@0.1.0 lint\n> ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.tsx\n\n\n/workspace/csc-webui/src/components/builder/ProfileForm.tsx\n  52:77  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  69:75  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/components/builder/RuleForm.tsx\n   5:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  32:96  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  74:77  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/components/builder/TableForm.tsx\n  29:81  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/routes/Builder.tsx\n  32:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n  45:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n/workspace/csc-webui/src/spec/convert.ts\n  11:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n\u2716 9 problems (9 errors, 0 warnings)\n\n(node:4731) ESLintRCWarning: You are using an eslintrc configuration file, which is deprecated and support will be removed in v10.0.0. Please migrate to an eslint.config.js file. See https://eslint.org/docs/latest/use/configure/migration-guide for details. An eslintrc configuration file is used because you have the ESLINT_USE_FLAT_CONFIG environment variable set to false. If you want to use an eslint.config.js file, remove the environment variable. If you want to find the location of the eslintrc configuration file, use the --debug flag.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+  },
+  "typecheck": {
+    "status": "fail",
+    "tail": "src/routes/Builder.tsx(94,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(96,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(97,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(97,50): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(99,73): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(102,67): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(108,39): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(108,80): error TS7006: Parameter 'x' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(115,24): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(119,48): error TS7006: Parameter 'x' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(125,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(127,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(128,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(129,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(129,53): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(130,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(131,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(133,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(134,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(136,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(137,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(138,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(140,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(141,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(143,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(144,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(145,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(148,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(149,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(149,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(150,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(151,30): error TS7006: Parameter 'w' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(151,33): error TS7006: Parameter 'i' implicitly has an 'any' type.\nsrc/routes/Builder.tsx(152,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(152,32): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(154,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(155,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(157,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(158,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(158,75): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(160,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(162,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Builder.tsx(163,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(1,26): error TS7016: Could not find a declaration file for module 'react'. '/workspace/csc-webui/node_modules/react/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`\nsrc/routes/Replay.tsx(16,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(16,5): error TS7016: Could not find a declaration file for module 'react/jsx-runtime'. '/workspace/csc-webui/node_modules/react/jsx-runtime.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react/jsx-runtime';`\nsrc/routes/Replay.tsx(17,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(17,61): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(18,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(19,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(23,22): error TS7006: Parameter 'e' implicitly has an 'any' type.\nsrc/routes/Replay.tsx(25,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(27,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(28,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(30,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(32,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Replay.tsx(34,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(1,37): error TS7016: Could not find a declaration file for module 'react'. '/workspace/csc-webui/node_modules/react/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`\nsrc/routes/Runs.tsx(20,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(20,5): error TS7016: Could not find a declaration file for module 'react/jsx-runtime'. '/workspace/csc-webui/node_modules/react/jsx-runtime.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react/jsx-runtime';`\nsrc/routes/Runs.tsx(21,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(22,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(22,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(23,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(24,30): error TS7006: Parameter 'r' implicitly has an 'any' type.\nsrc/routes/Runs.tsx(25,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(26,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(27,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(27,58): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(28,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(28,83): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(29,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(30,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(32,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(33,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(35,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(36,19): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(36,69): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(37,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(38,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(39,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(39,51): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(41,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(43,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(45,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(45,63): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(47,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/routes/Runs.tsx(48,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.\nsrc/state/builderStore.ts(1,45): error TS7016: Could not find a declaration file for module 'react'. '/workspace/csc-webui/node_modules/react/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`\nsrc/state/builderStore.ts(32,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(36,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(36,58): error TS7006: Parameter 'p' implicitly has an 'any' type.\nsrc/state/builderStore.ts(43,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(47,14): error TS7006: Parameter 's' implicitly has an 'any' type.\nsrc/state/builderStore.ts(47,88): error TS7006: Parameter 'r' implicitly has an 'any' type."
+  },
+  "build": {
+    "status": "pass",
+    "artifacts": [
+      "dist/index.html",
+      "dist/assets/index-DCQv98Le.js",
+      "dist/assets/index-ojuxPXc3.css",
+      "dist/mock-data/run_detail.json",
+      "dist/mock-data/spec_normalize.json"
+    ]
+  },
+  "tests": {
+    "status": "fail",
+    "summary": "npm error Missing script: \"test\""
+  },
+  "routes": {
+    "builder": {
+      "present": true,
+      "files": [
+        "src/routes/Builder.tsx"
+      ]
+    },
+    "top_level": [
+      "/",
+      "/builder",
+      "/runs",
+      "/replay",
+      "/about"
+    ]
+  },
+  "spec_builder": {
+    "authoring_types": {
+      "present": true,
+      "file": "src/spec/authoringTypes.ts"
+    },
+    "presets": {
+      "present": true,
+      "file": "src/spec/presets.ts"
+    },
+    "convert_toDraft": {
+      "present": true,
+      "file": "src/spec/convert.ts"
+    },
+    "store": {
+      "present": true,
+      "file": "src/state/builderStore.ts"
+    },
+    "components": {
+      "Navigator": "src/components/builder/Navigator.tsx",
+      "IdentityForm": "src/components/builder/IdentityForm.tsx",
+      "TableForm": "src/components/builder/TableForm.tsx",
+      "ProfileForm": "src/components/builder/ProfileForm.tsx",
+      "RuleForm": "src/components/builder/RuleForm.tsx",
+      "JsonPreview": "src/components/builder/JsonPreview.tsx",
+      "ErrorList": "src/components/builder/ErrorList.tsx",
+      "VisualMap": "src/components/builder/VisualMap.tsx"
+    },
+    "normalize_wiring": {
+      "present": true,
+      "files": [
+        "src/routes/Builder.tsx"
+      ]
+    },
+    "import_export": {
+      "present": true,
+      "files": [
+        "src/routes/Builder.tsx"
+      ]
+    },
+    "autosave": {
+      "present": true,
+      "files": [
+        "src/state/builderStore.ts"
+      ]
+    },
+    "visual_map": {
+      "present": true,
+      "files": [
+        "src/components/builder/VisualMap.tsx"
+      ]
+    }
+  },
+  "api_client": {
+    "files": [
+      "src/api/client.ts"
+    ],
+    "exports": [
+      "listSpecs",
+      "normalizeSpec",
+      "startRun",
+      "listRuns",
+      "getRun",
+      "getRunSummary",
+      "getRunReplay"
+    ],
+    "uses_env": {
+      "VITE_CSC_BASE_URL": true,
+      "VITE_CSC_TOKEN": true,
+      "VITE_CSC_USE_MOCK": true
+    }
+  },
+  "env": {
+    "referenced": [
+      "VITE_CSC_BASE_URL",
+      "VITE_CSC_TOKEN",
+      "VITE_CSC_USE_MOCK"
+    ],
+    "present_in_env_files": [
+      ".env.example"
+    ]
+  },
+  "dist": {
+    "present": true,
+    "top_artifacts": [
+      "dist/index.html",
+      "dist/assets/index-DCQv98Le.js",
+      "dist/assets/index-ojuxPXc3.css",
+      "dist/mock-data/run_detail.json",
+      "dist/mock-data/spec_normalize.json"
+    ]
+  },
+  "duplicates": [],
+  "red_flags": [
+    "ESLint fails with 9 @typescript-eslint/no-explicit-any errors",
+    "TypeScript compilation fails (413 errors) due to missing @types/react and implicit anys",
+    "npm run test missing script",
+    "npm warns about unknown env config 'http-proxy'"
+  ],
+  "scorecard": {
+    "merge": 2,
+    "spec_builder": 4,
+    "build": 3,
+    "docs": 5
+  },
+  "next_actions": [
+    "Install @types/react and @types/react-dom, ensure tsconfig includes them",
+    "Refine builder forms/state to eliminate implicit any values flagged by ESLint/TS",
+    "Define or document an npm test script to satisfy tooling",
+    "Review npm configuration to resolve unknown 'http-proxy' env warning"
+  ]
+}
