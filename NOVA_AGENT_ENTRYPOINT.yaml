@@ -1,17 +1,4 @@
-project: csc-webui
 current_phase: 2
-current_checkpoint: 7
-checkpoint_title: ESLint Flat Config + Prettier + Builder Smoke Test
+current_checkpoint: 8
+checkpoint_title: Pre-Phase-3 Prep (Bundle + About Status)
 allow_behavior_change: false
-docs_truth_source:
-  - docs/WEBUI_SNAPSHOT.yaml
-  - docs/PHASE_CHECKLIST.md
-  - docs/ARCHITECTURE.md
-commit_conventions: "feat:/fix:/docs:/chore:/refactor:/build:"
-compatibility:
-  csc_api: "v1"
-guardrails:
-  - "All HTTP via src/api/"
-  - "Env: VITE_CSC_BASE_URL, VITE_CSC_TOKEN, VITE_CSC_USE_MOCK"
-notes:
-  - "Phase 3 will focus on Runs Dashboard depth & artifacts UX."
