@@ -1,5 +1,6 @@
-phase: 2
-checkpoint: 8
-title: Pre-Phase-3 Prep (Bundle + About Status)
-description: Added reproducible UI bundle tarball and About page status tile with API/Mock detection.
+phase: 3
+checkpoint: complete
+title: Runs Dashboard
+description: Adds /runs list and detail views with API integration, mock fallback, and launch controls.
 status: complete
+tag: v0.4.0-phase3-baseline

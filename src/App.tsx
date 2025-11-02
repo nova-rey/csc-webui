@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Builder from "./routes/Builder";
-import Runs from "./routes/Runs";
 import Replay from "./routes/Replay";
 import About from "./routes/About";
+import RunsList from "./routes/RunsList";
+import RunDetail from "./routes/RunDetail";
 import NavBar from "./components/NavBar";
 
 export default function App() {
@@ -13,7 +14,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Builder />} />
           <Route path="/builder" element={<Builder />} />
-          <Route path="/runs" element={<Runs />} />
+          <Route path="/runs" element={<RunsList />} />
+          <Route path="/runs/:id" element={<RunDetail />} />
           <Route path="/replay" element={<Replay />} />
           <Route path="/about" element={<About />} />
         </Routes>

@@ -1,11 +1,15 @@
 {
-  "id": "run_1001",
-  "spec_id": "spec_demo_1",
-  "status": "done",
-  "started_at": "2025-10-30T13:00:00Z",
+  "id": "run001",
+  "name": "ContraCruise Test",
+  "status": "complete",
+  "started_at": "2025-11-02T10:00:00Z",
+  "bankroll_end": 1220,
+  "hands_played": 48,
+  "drawdown_pct": 0.12,
   "artifacts": {
-    "journal_csv": "/mock-data/demo_journal.csv",
-    "summary_json": "/mock-data/run_summary.json",
-    "manifest_json": "/mock-data/run_manifest.json"
-  }
+    "csv": "/mock-data/artifacts/run001_journal.csv",
+    "report": "/mock-data/artifacts/run001_report.json",
+    "manifest": "/mock-data/artifacts/run001_manifest.json"
+  },
+  "summary": { "pso": 4, "points_made": 18, "peak_bankroll": 1275 }
 }
