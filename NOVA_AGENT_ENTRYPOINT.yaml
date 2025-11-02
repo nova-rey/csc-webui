@@ -1,0 +1,21 @@
+project: csc-webui
+current_phase: 0
+current_checkpoint: 0
+checkpoint_title: Docs Kickoff & Repo Intent
+allow_behavior_change: false
+docs_truth_source:
+  - docs/WEBUI_SNAPSHOT.yaml
+  - docs/PHASE_CHECKLIST.md
+  - docs/ARCHITECTURE.md
+  - docs/DEV_WORKFLOW.md
+commit_conventions: "feat:/fix:/docs:/chore:/refactor:/build:"
+versioning:
+  ui_semver_start: "0.1.0"
+compatibility:
+  csc_api: "v1"
+guardrails:
+  - "No Python in this repo"
+  - "All network calls go to /api/v1 via a client wrapper"
+  - "Config via Vite env: VITE_CSC_BASE_URL, VITE_CSC_TOKEN"
+notes:
+  - "Next checkpoint (P0·C1) will introduce code scaffolding."
