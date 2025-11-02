@@ -14,7 +14,7 @@ export function useBuilderStore() {
     }
   });
   const [selected, setSelected] = useState<{ kind: "identity" | "table" | "profile" | "rule"; id?: string }>({
-    kind: "identity",
+    kind: "identity"
   });
 
   const first = useRef(true);

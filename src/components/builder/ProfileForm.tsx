@@ -1,23 +1,22 @@
-import { BaseBet, Profile } from "../../spec/authoringTypes";
+import { AuthoringSpec, BaseBet, Profile } from "../../spec/authoringTypes";
 
 export default function ProfileForm({
+  spec,
   profile,
-  onChange,
-}: {
-  profile: Profile;
-  onChange: (p: Profile) => void;
-}) {
+  onChange
+}: { spec: AuthoringSpec; profile: Profile; onChange: (p: Profile) => void }) {
+  void spec;
   function updateBet(idx: number, patch: Partial<BaseBet>) {
     const copy = {
       ...profile,
-      base_bets: profile.base_bets.map((b, i) => (i === idx ? { ...b, ...patch } : b)),
+      base_bets: profile.base_bets.map((b, i) => (i === idx ? { ...b, ...patch } : b))
     };
     onChange(copy);
   }
   function addBet() {
     const copy = {
       ...profile,
-      base_bets: [...profile.base_bets, { kind: "place", number: 6, amount: 6, working_on_comeout: false }],
+      base_bets: [...profile.base_bets, { kind: "place", number: 6, amount: 6, working_on_comeout: false }]
     };
     onChange(copy);
   }
@@ -50,7 +49,7 @@ export default function ProfileForm({
                 <select
                   className="w-full border rounded px-2 py-1"
                   value={b.kind}
-                  onChange={(e) => updateBet(idx, { kind: e.target.value as BaseBet["kind"] })}
+                  onChange={(e) => updateBet(idx, { kind: e.target.value as any })}
                 >
                   <option>place</option>
                   <option>come</option>
@@ -67,7 +66,7 @@ export default function ProfileForm({
                   value={b.number ?? ""}
                   onChange={(e) =>
                     updateBet(idx, {
-                      number: e.target.value ? (Number(e.target.value) as BaseBet["number"]) : undefined,
+                      number: e.target.value ? (Number(e.target.value) as any) : undefined
                     })
                   }
                 >

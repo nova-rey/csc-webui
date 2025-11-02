@@ -1,15 +1,10 @@
 import { Rule, RuleVerb } from "../../spec/authoringTypes";
 const verbs: RuleVerb[] = ["switch_profile", "press", "regress", "apply_policy"];
 
-export default function RuleForm({ value: rule, onChange }: { value: Rule; onChange: (r: Rule) => void }) {
-  function setArg(key: string, val: unknown) {
-    const args: Record<string, unknown> = { ...(rule.then.args ?? {}) };
-    if (val === undefined || val === "") {
-      delete args[key];
-    } else {
-      args[key] = val;
-    }
-    onChange({ ...rule, then: { ...rule.then, args } });
+export default function RuleForm({ value, onChange }: { value: Rule; onChange: (r: Rule) => void }) {
+  function setArg(k: string, v: any) {
+    const args = { ...(value.then.args ?? {}), [k]: v };
+    onChange({ ...value, then: { ...value.then, args } });
   }
   return (
     <div className="space-y-2 text-sm">
@@ -17,24 +12,24 @@ export default function RuleForm({ value: rule, onChange }: { value: Rule; onCha
         <span className="block">Rule ID</span>
         <input
           className="w-full border rounded px-2 py-1"
-          value={rule.id}
-          onChange={(e) => onChange({ ...rule, id: e.target.value })}
+          value={value.id}
+          onChange={(e) => onChange({ ...value, id: e.target.value })}
         />
       </label>
       <label className="block">
         <span className="block">When (expression)</span>
         <input
           className="w-full border rounded px-2 py-1"
-          value={rule.when}
-          onChange={(e) => onChange({ ...rule, when: e.target.value })}
+          value={value.when}
+          onChange={(e) => onChange({ ...value, when: e.target.value })}
         />
       </label>
       <label className="block">
         <span className="block">Then (verb)</span>
         <select
           className="w-full border rounded px-2 py-1"
-          value={rule.then.verb}
-          onChange={(e) => onChange({ ...rule, then: { ...rule.then, verb: e.target.value as RuleVerb } })}
+          value={value.then.verb}
+          onChange={(e) => onChange({ ...value, then: { ...value.then, verb: e.target.value as any } })}
         >
           {verbs.map((v) => (
             <option key={v} value={v}>
@@ -48,7 +43,7 @@ export default function RuleForm({ value: rule, onChange }: { value: Rule; onCha
           <span className="block">Arg: target/policy</span>
           <input
             className="w-full border rounded px-2 py-1"
-            value={String((rule.then.args ?? {}).target ?? (rule.then.args ?? {}).policy ?? "")}
+            value={String((value.then.args ?? {}).target ?? (value.then.args ?? {}).policy ?? "")}
             onChange={(e) => setArg("target", e.target.value)}
           />
         </label>
@@ -56,18 +51,8 @@ export default function RuleForm({ value: rule, onChange }: { value: Rule; onCha
           <span className="block">Arg: delta/factor</span>
           <input
             className="w-full border rounded px-2 py-1"
-            value={String((rule.then.args ?? {}).delta ?? (rule.then.args ?? {}).factor ?? "")}
-            onChange={(e) => {
-              const raw = e.target.value;
-              const num = Number(raw);
-              if (raw.trim() === "") {
-                setArg("delta", undefined);
-              } else if (Number.isFinite(num)) {
-                setArg("delta", num);
-              } else {
-                setArg("delta", raw);
-              }
-            }}
+            value={String((value.then.args ?? {}).delta ?? (value.then.args ?? {}).factor ?? "")}
+            onChange={(e) => setArg("delta", Number(e.target.value) || e.target.value)}
           />
         </label>
       </div>
@@ -77,16 +62,16 @@ export default function RuleForm({ value: rule, onChange }: { value: Rule; onCha
           <input
             type="number"
             className="w-full border rounded px-2 py-1"
-            value={rule.cooldown ?? ""}
-            onChange={(e) => onChange({ ...rule, cooldown: n(e.target.value) })}
+            value={value.cooldown ?? ""}
+            onChange={(e) => onChange({ ...value, cooldown: n(e.target.value) })}
           />
         </label>
         <label className="block">
           <span className="block">Scope</span>
           <select
             className="w-full border rounded px-2 py-1"
-            value={rule.scope ?? ""}
-            onChange={(e) => onChange({ ...rule, scope: (e.target.value as Rule["scope"]) || undefined })}
+            value={value.scope ?? ""}
+            onChange={(e) => onChange({ ...value, scope: (e.target.value as any) || undefined })}
           >
             <option value="">—</option>
             <option>roll</option>
@@ -98,8 +83,8 @@ export default function RuleForm({ value: rule, onChange }: { value: Rule; onCha
           <span className="block">Guards (csv)</span>
           <input
             className="w-full border rounded px-2 py-1"
-            value={(rule.guards ?? []).join(",")}
-            onChange={(e) => onChange({ ...rule, guards: csv(e.target.value) })}
+            value={(value.guards ?? []).join(",")}
+            onChange={(e) => onChange({ ...value, guards: csv(e.target.value) })}
           />
         </label>
       </div>
@@ -111,8 +96,5 @@ function n(v: string) {
   return Number.isFinite(x) ? x : undefined;
 }
 function csv(v: string) {
-  return v
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
+  return v.split(",").map((s) => s.trim()).filter(Boolean);
 }

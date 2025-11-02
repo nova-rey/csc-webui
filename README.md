@@ -34,7 +34,7 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 - Navigate to `/builder` to author a spec.
 - Use **Normalize** to validate/pretty-print via CSC.
 - Use **Import/Export** to move specs in/out.
-- Presets available: Molly, Contra (top-left).
+- Presets available: Molly, Contra (panel on the left).
 
 ## Repo Boundaries
 

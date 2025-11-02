@@ -26,9 +26,7 @@ export default function TableForm({ value, onChange }: { value: TableSettings; o
         <select
           className="w-full border rounded px-2 py-1"
           value={value.odds_profile ?? "3-4-5x"}
-          onChange={(e) =>
-            onChange({ ...value, odds_profile: e.target.value as TableSettings["odds_profile"] })
-          }
+          onChange={(e) => onChange({ ...value, odds_profile: e.target.value as any })}
         >
           {profiles.map((p) => (
             <option key={p} value={p}>
