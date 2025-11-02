@@ -1,7 +1,11 @@
 name: Build UI Bundle
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +14,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
+          cache: "npm"
       - run: npm ci
+      - run: npm run lint
       - run: npm run build
       - run: bash scripts/build_ui_bundle.sh
       - uses: actions/upload-artifact@v4
