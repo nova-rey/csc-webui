@@ -1,0 +1,7 @@
+{
+  "id": "run_1001",
+  "entries": [
+    { "file": "journal.csv", "size": 1280 },
+    { "file": "summary.json", "size": 640 }
+  ]
+}

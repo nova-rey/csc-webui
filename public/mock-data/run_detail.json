@@ -1,0 +1,11 @@
+{
+  "id": "run_1001",
+  "spec_id": "spec_demo_1",
+  "status": "done",
+  "started_at": "2025-10-30T13:00:00Z",
+  "artifacts": {
+    "journal_csv": "/mock-data/demo_journal.csv",
+    "summary_json": "/mock-data/run_summary.json",
+    "manifest_json": "/mock-data/run_manifest.json"
+  }
+}

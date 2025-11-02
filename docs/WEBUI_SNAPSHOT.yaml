@@ -1,7 +1,15 @@
-phase: 0
-checkpoint: 3
-title: Packaging & CI Seed
+phase: 1
+checkpoint: 5
+title: API Integration Layer complete
 status: complete
-build_artifact: ui_static.tar.gz
-scripts: scripts/build_ui_bundle.sh
-ci: .github/workflows/build.yml
+version_tag: v0.2.0-phase1-baseline
+api_compat:
+  ui_semver: 0.2.0
+  csc_api: v1
+artifacts:
+  - public/mock-data/*.json
+  - src/api/client.ts
+  - src/api/types.ts
+  - src/api/mock.ts
+notes:
+  - Mock mode toggled by VITE_CSC_USE_MOCK

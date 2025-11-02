@@ -1,7 +1,16 @@
 module.exports = {
   env: { browser: true, es2021: true },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
-  parserOptions: { ecmaVersion: 12, sourceType: "module" },
+  parser: "@typescript-eslint/parser",
+  parserOptions: { ecmaVersion: 12, sourceType: "module", ecmaFeatures: { jsx: true } },
   settings: { react: { version: "detect" } },
-  rules: { "react/react-in-jsx-scope": "off" },
+  plugins: ["react", "@typescript-eslint"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+  },
 };

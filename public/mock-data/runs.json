@@ -1,0 +1,4 @@
+[
+  { "id": "run_1001", "spec_id": "spec_demo_1", "status": "done", "started_at": "2025-10-30T13:00:00Z" },
+  { "id": "run_1002", "spec_id": "spec_demo_2", "status": "running", "started_at": "2025-10-30T13:10:00Z" }
+]
