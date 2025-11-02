@@ -27,3 +27,10 @@
 - Env: `VITE_CSC_BASE_URL`, `VITE_CSC_TOKEN`, optional `VITE_CSC_USE_MOCK=true`.
 - Response shape is normalized to `{ ok, status, data }` or `{ ok:false, status, message }`.
 - Mock mode serves JSON from `/mock-data/*` when the API is unavailable.
+## Spec Builder (Phase 2)
+- Authoring types live in `src/spec/`.
+- Conversion `authoring → draft` via `src/spec/convert.ts`.
+- `/builder` provides a navigator (spec/profiles/rules), editor forms, and an output panel with Normalize.
+- Persistence: localStorage autosave under a single workspace key.
+- Import/Export: JSON files for authoring or normalized output.
+- Visual map: read-only tree (profiles + rules).
