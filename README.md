@@ -9,7 +9,7 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 - **History & artifacts** — browse prior runs, download CSVs, view summaries.
 
 ## Compatibility
-- UI **v0.2.x** targets **CSC API v1** (`/api/v1/...`).
+- UI **v0.3.x** targets **CSC API v1** (`/api/v1/...`).
 - Configure the API root with `VITE_CSC_BASE_URL` (e.g., `http://localhost:8080/api/v1`).
 
 ## Quickstart
@@ -26,9 +26,15 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 
 4. Open:
 
-   * `/about` → performs a `/spec` call (or mock).
-   * `/runs` → lists runs and shows details.
-   * `/replay` → loads mock replay by Run ID (when mock is on).
+ * `/about` → performs a `/spec` call (or mock).
+ * `/runs` → lists runs and shows details.
+ * `/replay` → loads mock replay by Run ID (when mock is on).
+
+## Builder (Phase 2)
+- Navigate to `/builder` to author a spec.
+- Use **Normalize** to validate/pretty-print via CSC.
+- Use **Import/Export** to move specs in/out.
+- Presets available: Molly, Contra (top-left).
 
 ## Repo Boundaries
 
@@ -39,7 +45,7 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 
 1. Phase 0 — Bootstrap (complete)
 2. Phase 1 — API integration client (complete)
-3. Phase 2 — Spec Builder MVP (next)
+3. Phase 2 — Spec Builder MVP (complete)
 4. Phase 3 — Runs dashboard
 5. Phase 4 — Replay viewer
 6. Phase 5 — Baseline & docs

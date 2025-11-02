@@ -1,27 +1,18 @@
 project: csc-webui
-phase: 1
-checkpoint: 5
-title: API Integration Layer complete
+phase: 2
+checkpoint: 6
+title: Spec Builder MVP complete
 status: complete
-version_tag: v0.2.0-phase1-baseline
+version_tag: v0.3.0-phase2-baseline
 api_compat:
-  ui_semver: 0.2.0
+  ui_semver: 0.3.0
   csc_api: v1
-guardrails:
-  - separate_repo: true
-  - network_calls_use_api_v1_only: true
-  - configurable_base_url: VITE_CSC_BASE_URL
-  - token_support: VITE_CSC_TOKEN
-  - lint_format_standards: "ESLint + Prettier"
 artifacts:
-  - public/mock-data/specs.json
-  - public/mock-data/spec_normalize.json
-  - public/mock-data/runs.json
-  - public/mock-data/run_detail.json
-  - public/mock-data/run_summary.json
-  - public/mock-data/run_replay.json
-  - src/api/types.ts
-  - src/api/client.ts
-  - src/api/mock.ts
+  - src/routes/Builder.tsx
+  - src/spec/authoringTypes.ts
+  - src/spec/presets.ts
+  - src/spec/convert.ts
+  - src/state/builderStore.ts
+  - src/components/builder/*
 notes:
-  - Mock mode toggled by VITE_CSC_USE_MOCK
+  - Builder uses /spec/normalize; no graph editing yet.

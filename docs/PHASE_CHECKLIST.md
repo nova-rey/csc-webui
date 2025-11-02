@@ -16,3 +16,10 @@
 **Version Compat Table**
 
 - UI v0.1.x ↔ CSC API v1
+| P2 | C0 | Docs Kickoff | ✅ Complete | Added Spec Builder MVP plan |
+| P2 | C1 | Types & Schema | ✅ Complete | AuthoringSpec + converters |
+| P2 | C2 | UI Skeleton | ✅ Complete | Navigator + forms + panes |
+| P2 | C3 | Normalize Wire-up | ✅ Complete | /spec/normalize + preview |
+| P2 | C4 | Persistence & IO | ✅ Complete | autosave, import/export, presets |
+| P2 | C5 | Visual Map | ✅ Complete | read-only tree |
+| P2 | C6 | Baseline & Tag | ✅ Complete | v0.3.0-phase2-baseline |
