@@ -21,3 +21,9 @@
 - No direct coupling to CSC internals; only the HTTP contract.
 - All calls go through the API client; no stray `fetch()` in components.
 - Semantic commits; version tags parallel to CSC.
+
+## API Client (Phase 1)
+- All HTTP lives in `src/api/` with a small axios wrapper.
+- Env: `VITE_CSC_BASE_URL`, `VITE_CSC_TOKEN`, optional `VITE_CSC_USE_MOCK=true`.
+- Response shape is normalized to `{ ok, status, data }` or `{ ok:false, status, message }`.
+- Mock mode serves JSON from `/mock-data/*` when the API is unavailable.

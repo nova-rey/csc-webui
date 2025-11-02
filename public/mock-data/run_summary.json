@@ -1,0 +1,9 @@
+{
+  "id": "run_1001",
+  "hands": 120,
+  "rolls": 850,
+  "bankroll_start": 1000,
+  "bankroll_end": 1215,
+  "pso_count": 14,
+  "notes": "Mock summary"
+}

@@ -12,6 +12,12 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 - UI **v0.1.x** targets **CSC API v1** (`/api/v1/...`).
 - Configure the API root with `VITE_CSC_BASE_URL` (e.g., `http://localhost:8080/api/v1`).
 
+## Quickstart
+1. Copy `.env.example` → `.env.local` and set `VITE_CSC_BASE_URL`.
+2. Optionally enable `VITE_CSC_USE_MOCK=true` to demo without CSC.
+3. `npm ci && npm run dev` to start.
+4. Visit `/about` to see a live `/spec` call (or mock). `/runs` shows runs list + details.
+
 ## Repo Boundaries
 - This repo contains **only** the Web UI (TypeScript/React). No Python.
 - Packaging outputs `ui_static.tar.gz` for optional embedding into CSC’s `/ui/*` static mount.
