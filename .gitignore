@@ -1,0 +1,5 @@
+node_modules/
+dist/
+ui_static.tar.gz
+.idea/
+.DS_Store

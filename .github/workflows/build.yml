@@ -1,0 +1,19 @@
+name: Build UI Bundle
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - run: npm ci
+      - run: npm run build
+      - run: bash scripts/build_ui_bundle.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ui_static
+          path: ui_static.tar.gz

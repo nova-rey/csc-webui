@@ -1,22 +1,7 @@
-project: csc-webui
 phase: 0
-checkpoint: 0
-title: Docs Kickoff & Repo Intent
-status: active
-api_compat:
-  ui_semver: 0.1.0
-  csc_api: v1
-guardrails:
-  - separate_repo: true
-  - network_calls_use_api_v1_only: true
-  - configurable_base_url: VITE_CSC_BASE_URL
-  - token_support: VITE_CSC_TOKEN
-  - lint_format_standards: "ESLint + Prettier (to be added P0·C1)"
-deliverables_this_phase:
-  - README.md
-  - docs/PHASE_CHECKLIST.md
-  - docs/ARCHITECTURE.md
-  - docs/DEV_WORKFLOW.md
-  - NOVA_AGENT_ENTRYPOINT.yaml
-notes:
-  - P0 contains one docs-only commit before any code or toolchain is introduced.
+checkpoint: 3
+title: Packaging & CI Seed
+status: complete
+build_artifact: ui_static.tar.gz
+scripts: scripts/build_ui_bundle.sh
+ci: .github/workflows/build.yml
