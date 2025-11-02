@@ -1,3 +1,4 @@
-hand,outcome,bankroll
-1,win,1020
-2,loss,990
+roll,bankroll_after
+1,1005
+2,998
+3,1012
