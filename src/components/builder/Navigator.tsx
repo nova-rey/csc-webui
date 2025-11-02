@@ -16,12 +16,18 @@ export default function Navigator(props: {
         <h3 className="font-semibold mb-2">Spec</h3>
         <ul className="text-sm">
           <li>
-            <button className={selClass(selected.kind === "identity")} onClick={() => props.setSelected({ kind: "identity" })}>
+            <button
+              className={selClass(selected.kind === "identity")}
+              onClick={() => props.setSelected({ kind: "identity" })}
+            >
               Identity
             </button>
           </li>
           <li>
-            <button className={selClass(selected.kind === "table")} onClick={() => props.setSelected({ kind: "table" })}>
+            <button
+              className={selClass(selected.kind === "table")}
+              onClick={() => props.setSelected({ kind: "table" })}
+            >
               Table
             </button>
           </li>

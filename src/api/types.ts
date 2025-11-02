@@ -1,7 +1,16 @@
 // Basic shared primitives
 export type ID = string;
-export interface ApiOk<T> { ok: true; status: number; data: T; }
-export interface ApiErr { ok: false; status: number; message: string; details?: unknown; }
+export interface ApiOk<T> {
+  ok: true;
+  status: number;
+  data: T;
+}
+export interface ApiErr {
+  ok: false;
+  status: number;
+  message: string;
+  details?: unknown;
+}
 export type ApiResp<T> = ApiOk<T> | ApiErr;
 
 // Spec types
@@ -13,8 +22,14 @@ export interface SpecSummary {
   notes?: string;
 }
 
-export interface SpecNormalizeRequest { spec: unknown; pretty?: boolean; }
-export interface SpecNormalizeResult { normalized: unknown; warnings?: string[]; }
+export interface SpecNormalizeRequest {
+  spec: unknown;
+  pretty?: boolean;
+}
+export interface SpecNormalizeResult {
+  normalized: unknown;
+  warnings?: string[];
+}
 
 // Run types
 export interface RunRecord {
@@ -46,7 +61,7 @@ export interface RunSummary {
 
 // Replay (simplified placeholder)
 export interface ReplayEvent {
-  t: number;      // tick/sequence
-  roll?: number;  // dice total
-  note?: string;  // human-readable
+  t: number; // tick/sequence
+  roll?: number; // dice total
+  note?: string; // human-readable
 }

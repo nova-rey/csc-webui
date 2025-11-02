@@ -13,8 +13,11 @@ export function useBuilderStore() {
       return presetMolly;
     }
   });
-  const [selected, setSelected] = useState<{ kind: "identity" | "table" | "profile" | "rule"; id?: string }>({
-    kind: "identity"
+  const [selected, setSelected] = useState<{
+    kind: "identity" | "table" | "profile" | "rule";
+    id?: string;
+  }>({
+    kind: "identity",
   });
 
   const first = useRef(true);
@@ -44,7 +47,10 @@ export function useBuilderStore() {
     setSelected({ kind: "rule", id });
   }
   function removeRule(id: string) {
-    setSpec((s) => ({ ...s, behavior: { ...s.behavior, rules: s.behavior.rules.filter((r) => r.id !== id) } }));
+    setSpec((s) => ({
+      ...s,
+      behavior: { ...s.behavior, rules: s.behavior.rules.filter((r) => r.id !== id) },
+    }));
     if (selected.kind === "rule" && selected.id === id) setSelected({ kind: "identity" });
   }
 
