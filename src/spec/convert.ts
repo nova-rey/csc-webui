@@ -1,4 +1,4 @@
-import { AuthoringSpec, Rule } from "./authoringTypes";
+import type { AuthoringSpec, Rule } from "./authoringTypes";
 
 export function toDraft(spec: AuthoringSpec): Record<string, unknown> {
   // Shallow clean to drop undefineds while preserving shape

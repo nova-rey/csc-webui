@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { getApiStatus } from "../api/client";
-
-type StatusOk = { ok: true; api_version?: string; server?: string; time?: string; endpoints?: string[] };
-type StatusErr = { ok: false; error: string };
+import type { ApiStatus } from "../api/client";
 
 export default function AboutStatus() {
-  const [data, setData] = useState<StatusOk | StatusErr | null>(null);
+  const [data, setData] = useState<ApiStatus | null>(null);
 
   useEffect(() => {
     let alive = true;
-    getApiStatus().then((d) => alive && setData(d as any));
+    getApiStatus().then((d) => {
+      if (alive) {
+        setData(d);
+      }
+    });
     return () => {
       alive = false;
     };
