@@ -9,25 +9,40 @@ A modern, browser-based UI for **CrapsSim-Control (CSC)**.
 - **History & artifacts** — browse prior runs, download CSVs, view summaries.
 
 ## Compatibility
-- UI **v0.1.x** targets **CSC API v1** (`/api/v1/...`).
+- UI **v0.2.x** targets **CSC API v1** (`/api/v1/...`).
 - Configure the API root with `VITE_CSC_BASE_URL` (e.g., `http://localhost:8080/api/v1`).
 
 ## Quickstart
-1. Copy `.env.example` → `.env.local` and set `VITE_CSC_BASE_URL`.
-2. Optionally enable `VITE_CSC_USE_MOCK=true` to demo without CSC.
-3. `npm ci && npm run dev` to start.
-4. Visit `/about` to see a live `/spec` call (or mock). `/runs` shows runs list + details.
+1. Copy `.env.example` → `.env.local`.  
+2. Set:
+   - `VITE_CSC_BASE_URL=http://localhost:8080/api/v1`
+   - `VITE_CSC_TOKEN=` (optional)
+   - `VITE_CSC_USE_MOCK=true` (optional, to run without CSC)
+3. Install and run:
+   ```bash
+   npm ci
+   npm run dev
+```
+
+4. Open:
+
+   * `/about` → performs a `/spec` call (or mock).
+   * `/runs` → lists runs and shows details.
+   * `/replay` → loads mock replay by Run ID (when mock is on).
 
 ## Repo Boundaries
-- This repo contains **only** the Web UI (TypeScript/React). No Python.
-- Packaging outputs `ui_static.tar.gz` for optional embedding into CSC’s `/ui/*` static mount.
+
+* This repo contains **only** the Web UI (TypeScript/React). No Python.
+* Packaging outputs `ui_static.tar.gz` for optional embedding into CSC’s `/ui/*` static mount.
 
 ## Roadmap (high level)
-1. Phase 0 — Bootstrap (you are here)
-2. Phase 1 — API integration client
-3. Phase 2 — Spec Builder MVP
+
+1. Phase 0 — Bootstrap (complete)
+2. Phase 1 — API integration client (complete)
+3. Phase 2 — Spec Builder MVP (next)
 4. Phase 3 — Runs dashboard
 5. Phase 4 — Replay viewer
 6. Phase 5 — Baseline & docs
 
-See `docs/PHASE_CHECKLIST.md` for checkpoint-level tracking and `docs/WEBUI_SNAPSHOT.yaml` for current state.
+See `docs/PHASE_CHECKLIST.md` for checkpoint tracking and `docs/WEBUI_SNAPSHOT.yaml` for current state.
+
