@@ -1,0 +1,11 @@
+{
+  "run_id": "run001",
+  "frames": [
+    { "roll": 1, "bankroll_after": 1000, "hand_id": 1, "point_on": null, "dice": [3, 4], "events": ["come_out"] },
+    { "roll": 2, "bankroll_after": 1006, "hand_id": 1, "point_on": 6, "dice": [4, 2], "events": ["point_set:6"] },
+    { "roll": 3, "bankroll_after": 998, "hand_id": 1, "point_on": 6, "dice": [5, 2], "events": [] },
+    { "roll": 4, "bankroll_after": 1012, "hand_id": 1, "point_on": 6, "dice": [6, 6], "events": ["hard_12"] },
+    { "roll": 5, "bankroll_after": 1020, "hand_id": 1, "point_on": 6, "dice": [4, 2], "events": ["point_made:6"] }
+  ],
+  "meta": { "seed": 101, "started_at": "2025-11-02T10:00:00Z", "duration_ms": 42000, "peak": 1025, "drawdown_pct": 0.02 }
+}

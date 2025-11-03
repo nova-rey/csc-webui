@@ -42,11 +42,13 @@ export interface RunRecord {
 }
 
 export interface RunDetail extends RunRecord {
-  artifacts?: {
-    journal_csv?: string;
-    summary_json?: string;
-    manifest_json?: string;
-  };
+  bankroll_end?: number;
+  hands_played?: number;
+  duration_ms?: number;
+  peak?: number;
+  drawdown_pct?: number;
+  artifacts?: Record<string, string>;
+  summary?: Record<string, unknown>;
 }
 
 export interface RunSummary {
@@ -59,9 +61,3 @@ export interface RunSummary {
   notes?: string;
 }
 
-// Replay (simplified placeholder)
-export interface ReplayEvent {
-  t: number; // tick/sequence
-  roll?: number; // dice total
-  note?: string; // human-readable
-}

@@ -9,7 +9,6 @@ import type {
   RunRecord,
   RunDetail,
   RunSummary,
-  ReplayEvent,
 } from "./types";
 import { getMockApi } from "./mock";
 
@@ -58,6 +57,27 @@ function normalizeError(e: unknown): ApiErr {
 }
 
 const mock = USE_MOCK ? getMockApi() : null;
+
+export type RunReplayFrame = {
+  roll: number;
+  bankroll_after: number;
+  hand_id: number;
+  point_on: number | null;
+  dice: [number, number];
+  events?: string[];
+};
+
+export type RunReplayPayload = {
+  run_id: string;
+  frames: RunReplayFrame[];
+  meta?: {
+    seed?: number;
+    started_at?: string;
+    duration_ms?: number;
+    peak?: number;
+    drawdown_pct?: number;
+  };
+};
 
 export async function listSpecs(): Promise<ApiResp<SpecSummary[]>> {
   if (mock) return mock.listSpecs();
@@ -121,13 +141,20 @@ export async function getRunSummary(id: string): Promise<ApiResp<RunSummary>> {
   }
 }
 
-export async function getRunReplay(id: string): Promise<ApiResp<ReplayEvent[]>> {
-  if (mock) return mock.getRunReplay(id);
+export async function getRunReplay(id: string): Promise<RunReplayPayload> {
   try {
-    const r = await api.get(`/runs/${encodeURIComponent(id)}/replay`);
-    return ok(r.status, r.data as ReplayEvent[]);
-  } catch (error) {
-    return normalizeError(error);
+    if (isMockEnabled()) {
+      const r = await axios.get<RunReplayPayload>(`/mock-data/replay.json`);
+      return r.data;
+    }
+    const r = await axios.get<RunReplayPayload>(
+      `${baseUrl()}/runs/${encodeURIComponent(id)}/replay`,
+      authHeaders(),
+    );
+    return r.data;
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "replay fetch failed";
+    throw new Error(message);
   }
 }
 
