@@ -12,6 +12,8 @@ export interface RunSummary {
 export interface RunDetail extends RunSummary {
   bankroll_end?: number;
   hands_played?: number;
+  duration_ms?: number;
+  peak?: number;
   drawdown_pct?: number;
   artifacts?: Record<string, string>;
   summary?: Record<string, unknown>;

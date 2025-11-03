@@ -34,3 +34,9 @@
 | P3·C3 | Launch & Refresh Controls                        | ✅ Complete | Start new runs and refresh list                          |
 | P3·C4 | Mock & Real Data Parity                          | ✅ Complete | Added mock JSON for runs and run detail                  |
 | P3·C5 | Docs, Tests & Baseline                           | ✅ Complete | Added smoke tests and tagged v0.4.0-phase3-baseline      |
+| P4·C0 | Docs Kickoff & Roadmap Sync | ✅ Complete | Switched snapshot to Phase 4, closed Phase 3 |
+| P4·C1 | Replay Route | ✅ Complete | Added /replay/:id with roll-by-roll view |
+| P4·C2 | Run Metadata Polish | ✅ Complete | Extended RunDetail with runtime/peak/drawdown + manifest link/preview |
+| P4·C3 | Replay Visualization | ✅ Complete | Lazy-loaded bankroll chart with play/pause/scrub and speed control |
+| P4·C4 | Manifest Integration | ✅ Complete | Optional inline preview of manifest.json with safe viewer |
+| P4·C5 | Baseline & Tests | ✅ Complete | Tests, mocks, and tag v0.5.0-phase4-baseline |

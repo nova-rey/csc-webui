@@ -5,6 +5,8 @@
   "started_at": "2025-11-02T10:00:00Z",
   "bankroll_end": 1220,
   "hands_played": 48,
+  "duration_ms": 42000,
+  "peak": 1275,
   "drawdown_pct": 0.12,
   "artifacts": {
     "csv": "/mock-data/artifacts/run001_journal.csv",

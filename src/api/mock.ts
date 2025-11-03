@@ -8,7 +8,6 @@ import type {
   RunRecord,
   RunDetail,
   RunSummary,
-  ReplayEvent,
 } from "./types";
 
 function ok<T>(data: T): ApiOk<T> {
@@ -68,14 +67,6 @@ export function getMockApi() {
       void id;
       try {
         return ok(await load<RunSummary>("/mock-data/run_summary.json"));
-      } catch (e) {
-        return err((e as Error).message);
-      }
-    },
-    async getRunReplay(id: string): Promise<ApiResp<ReplayEvent[]>> {
-      void id;
-      try {
-        return ok(await load<ReplayEvent[]>("/mock-data/run_replay.json"));
       } catch (e) {
         return err((e as Error).message);
       }

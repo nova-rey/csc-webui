@@ -14,3 +14,8 @@ The new `/runs` route lists recent runs with status badges, start time, seed, an
 Mock JSONs enable offline development.
 Added launch and refresh controls, smoke tests, and `v0.4.0-phase3-baseline`.
 Note: Launch endpoint aligned to `POST /api/v1/runs/start` for CSC API v1; UI mocks still return `run_detail.json` for offline flows.
+
+### Phase 4 — Replay Viewer + Metadata Polish
+Adds `/replay/:id` with a lazy-loaded bankroll-vs-roll chart and simple controls (play/pause/scrub/speed).
+Run Detail now surfaces runtime, peak bankroll, and drawdown when provided, and links to artifacts with an optional inline manifest preview.
+Phase baseline tagged `v0.5.0-phase4-baseline`.

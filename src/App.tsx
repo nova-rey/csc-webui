@@ -16,7 +16,7 @@ export default function App() {
           <Route path="/builder" element={<Builder />} />
           <Route path="/runs" element={<RunsList />} />
           <Route path="/runs/:id" element={<RunDetail />} />
-          <Route path="/replay" element={<Replay />} />
+          <Route path="/replay/:id" element={<Replay />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
