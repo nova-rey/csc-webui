@@ -1,4 +1,4 @@
-current_phase: 4
-current_checkpoint: complete
-checkpoint_title: Replay Viewer + Metadata Polish
+current_phase: 5
+current_checkpoint: C1
+checkpoint_title: Baseline & Tag (Phase 4 Replay)
 allow_behavior_change: false

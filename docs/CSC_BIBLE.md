@@ -19,3 +19,8 @@ Note: Launch endpoint aligned to `POST /api/v1/runs/start` for CSC API v1; UI mo
 Adds `/replay/:id` with a lazy-loaded bankroll-vs-roll chart and simple controls (play/pause/scrub/speed).
 Run Detail now surfaces runtime, peak bankroll, and drawdown when provided, and links to artifacts with an optional inline manifest preview.
 Phase baseline tagged `v0.5.0-phase4-baseline`.
+
+### Phase 5 — Baseline & Tag (Replay Viewer)
+- Verified lint + typecheck + build.
+- Captured `ui_static.tar.gz` and wrote `baselines/phase4/manifest.json` with SHA-256.
+- Prepared tag: `v0.5.0-phase4-baseline`.

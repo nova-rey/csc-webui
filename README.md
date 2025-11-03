@@ -66,6 +66,15 @@ npm run build:bundle
 # outputs ./ui_static.tar.gz containing the dist/ directory
 ```
 
+## Baseline & Bundle
+To produce a reproducible baseline bundle and manifest:
+```bash
+npm run baseline:capture
+# outputs baselines/phase4/manifest.json and baselines/phase4/ui_static.tar.gz
+```
+
+Tag for this baseline: v0.5.0-phase4-baseline
+
 ### About → Status
 
 The About page shows a small status tile including the configured base URL, whether a token is set, and the result of a status probe:
