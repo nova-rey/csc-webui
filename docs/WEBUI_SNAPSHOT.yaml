@@ -1,6 +1,14 @@
-phase: 4
-checkpoint: complete
-title: Replay Viewer + Metadata Polish
-description: Adds /replay/:id with a bankroll chart and controls, enhances Run Detail with manifest/metadata, and updates mock parity.
+phase: 5
+checkpoint: C1
+title: Baseline & Tag (Phase 4 Replay)
 status: complete
-tag: v0.5.0-phase4-baseline
+version_tag: v0.5.0-phase4-baseline
+notes:
+  - Build verified; bundle captured as ui_static.tar.gz
+  - Baseline manifest includes sha256 and environment snapshot
+compatibility:
+  ui_series: 0.5.x
+  csc_api: v1
+artifacts:
+  - baselines/phase4/manifest.json
+  - baselines/phase4/ui_static.tar.gz

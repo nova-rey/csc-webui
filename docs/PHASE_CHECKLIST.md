@@ -40,3 +40,8 @@
 | P4·C3 | Replay Visualization | ✅ Complete | Lazy-loaded bankroll chart with play/pause/scrub and speed control |
 | P4·C4 | Manifest Integration | ✅ Complete | Optional inline preview of manifest.json with safe viewer |
 | P4·C5 | Baseline & Tests | ✅ Complete | Tests, mocks, and tag v0.5.0-phase4-baseline |
+
+| Phase | Ckpt | Title                 | ✅ | Notes |
+|------:|:----:|-----------------------|:--:|-------|
+| 5     | C0   | Docs Kickoff          | ✅ | Snapshot bumped to Phase 5 |
+| 5     | C1   | Baseline & Tag        | ✅ | Bundle + manifest captured; tag v0.5.0-phase4-baseline |
