@@ -3,6 +3,7 @@ import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import RunsList from "./RunsList";
 import * as runsApi from "../api/runs";
+import type { RunDetail, RunSummary } from "../api/runs";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -18,7 +19,7 @@ describe("RunsList", () => {
         seed: 42,
         started_at: "2025-11-02T10:00:00Z",
       },
-    ]);
+    ] satisfies RunSummary[]);
 
     render(
       <MemoryRouter>
@@ -34,7 +35,7 @@ describe("RunsList launch", () => {
   it("calls launchRun and refreshes list", async () => {
     const listSpy = vi.spyOn(runsApi, "listRuns").mockResolvedValue([
       { id: "r1", name: "Before", status: "complete", seed: 1, started_at: "2025-11-02T10:00:00Z" },
-    ]);
+    ] satisfies RunSummary[]);
     const launchSpy = vi
       .spyOn(runsApi, "launchRun")
       .mockResolvedValue({
@@ -43,7 +44,7 @@ describe("RunsList launch", () => {
         status: "pending",
         seed: 999,
         started_at: "2025-11-02T11:00:00Z",
-      } as any);
+      } satisfies RunDetail);
 
     render(
       <MemoryRouter>

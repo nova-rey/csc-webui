@@ -1,8 +1,6 @@
 import axios from "axios";
 import { authHeaders, baseUrl, isMockEnabled } from "./client";
 
-const useMock = isMockEnabled;
-
 export interface RunSummary {
   id: string;
   name: string;
@@ -32,9 +30,9 @@ export async function getRun(id: string): Promise<RunDetail> {
 }
 
 export async function launchRun(
-  payload: { spec_id?: string; spec_json?: Record<string, any> } = {},
+  payload: { spec_id?: string; spec_json?: Record<string, unknown> } = {},
 ): Promise<RunDetail> {
-  if (useMock()) {
+  if (isMockEnabled()) {
     // Mock: return a completed run detail so the UI can refresh & show artifacts
     const r = await axios.get("/mock-data/run_detail.json");
     return r.data;
