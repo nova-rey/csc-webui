@@ -95,14 +95,14 @@ export default function RunDetail() {
         </div>
       )}
 
-      {run.artifacts && (
+      {run.artifacts && Object.keys(run.artifacts).length > 0 && (
         <div className="bg-white p-4 rounded border">
           <h2 className="text-lg font-semibold mb-2">Artifacts</h2>
           <ul className="list-disc list-inside text-sm">
-            {Object.entries(run.artifacts).map(([key, value]) => (
-              <li key={key}>
-                <a className="text-blue-600 underline" href={value} download>
-                  {key}
+            {Object.entries(run.artifacts).map(([label, href]) => (
+              <li key={label}>
+                <a href={href} download className="text-blue-600 underline">
+                  {label}
                 </a>
               </li>
             ))}

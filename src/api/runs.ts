@@ -1,6 +1,8 @@
 import axios from "axios";
 import { authHeaders, baseUrl, isMockEnabled } from "./client";
 
+const useMock = isMockEnabled;
+
 export interface RunSummary {
   id: string;
   name: string;
@@ -29,8 +31,15 @@ export async function getRun(id: string): Promise<RunDetail> {
   return response.data;
 }
 
-export async function launchRun(payload: Record<string, unknown> = {}): Promise<RunDetail> {
-  if (isMockEnabled()) return (await axios.get("/mock-data/run_detail.json")).data;
-  const response = await axios.post(`${baseUrl()}/runs`, payload, authHeaders());
-  return response.data;
+export async function launchRun(
+  payload: { spec_id?: string; spec_json?: Record<string, any> } = {},
+): Promise<RunDetail> {
+  if (useMock()) {
+    // Mock: return a completed run detail so the UI can refresh & show artifacts
+    const r = await axios.get("/mock-data/run_detail.json");
+    return r.data;
+  }
+  // Canonical start endpoint for CSC API v1
+  const r = await axios.post(`${baseUrl()}/runs/start`, payload, authHeaders());
+  return r.data;
 }
