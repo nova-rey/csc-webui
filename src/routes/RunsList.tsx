@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { listRuns, launchRun, RunSummary } from "../api/runs";
+import { listRuns, launchRun } from "../api/runs";
+import type { RunSummary } from "../api/runs";
 import RunStatusBadge from "../components/RunStatusBadge";
 
 export default function RunsList() {

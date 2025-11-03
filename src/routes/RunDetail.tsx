@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getRun, RunDetail as RunDetailType } from "../api/runs";
+import { getRun } from "../api/runs";
+import type { RunDetail as RunDetailType } from "../api/runs";
 import RunStatusBadge from "../components/RunStatusBadge";
 
 export default function RunDetail() {
